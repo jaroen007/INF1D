@@ -11,6 +11,7 @@
 	kfjskghsdfkjghsdkl
 	<?php
 	echo "PHP MASTERZZZZ";
+	echo "LORD CORNO";
 	?>
 </body>
 </html>
