@@ -10,7 +10,5 @@
 	
 	iets door jaroen
 	
-	
-	nog een edit door jaroen
 </body>
 </html>
