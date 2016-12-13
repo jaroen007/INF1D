@@ -11,6 +11,7 @@
 	kfjskghsdfkjghsdkl
 	<?php
 	echo "PHP MASTERZZZZ";
+<<<<<<< HEAD
 	
 	
 	
@@ -20,6 +21,9 @@
 	
 	
 	echo tralalalalal
+=======
+	echo "Zekers wel";
+>>>>>>> origin/master
 	?>
 </body>
 </html>
