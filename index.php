@@ -13,5 +13,7 @@
 	echo "PHP MASTERZZZZ";
 	echo "LORD CORNO";
 	?>
+	
+	<p>Cornee is fucking goed man holy shit geef die man een beker ofzo</p>
 </body>
 </html>
