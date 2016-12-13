@@ -7,8 +7,5 @@
 </head>
 <body>
 	content
-	
-	iets door jaroen
-	
 </body>
 </html>
