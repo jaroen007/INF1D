@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 dec 2016 om 19:27
+-- Gegenereerd op: 20 dec 2016 om 12:45
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 5.6.24
 
@@ -48,10 +48,10 @@ CREATE TABLE `cv` (
   `Birthday` date NOT NULL,
   `PhoneNumber` varchar(15) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Experience` varchar(255) NOT NULL,
-  `Education` varchar(255) NOT NULL,
-  `Hobbies` varchar(255) NOT NULL,
-  `Overig` varchar(255) NOT NULL
+  `Experience` text NOT NULL,
+  `Education` text NOT NULL,
+  `Hobbies` text NOT NULL,
+  `Overig` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -94,7 +94,7 @@ CREATE TABLE `message` (
   `SourceUserID` int(10) NOT NULL,
   `TargetUserID` int(10) NOT NULL,
   `PostDate` date NOT NULL,
-  `Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Timestamp` time NOT NULL,
   `Message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
