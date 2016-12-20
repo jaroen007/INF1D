@@ -1,0 +1,91 @@
+body,html{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+	color: black;
+}
+
+.login_add_edit_button a{
+	color: black;
+}
+
+.contentcontainer{
+	display: block;
+	width: 100%;
+	background-color: white;
+}
+
+.footercontainer{
+	display: block;
+	width: 100%;
+	background-color: black;
+}
+
+.topbarcontainer{
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin:0 auto;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	z-index: 2;
+	background-color: #DDDDDD;
+}
+
+.topbar{
+	width: 100%;
+	max-width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.content{
+	padding-top: 55px;
+	width: 100%;
+	max-width: 1200px;
+	height: 50px;
+	position: relative;
+	margin: 0 auto;
+	min-height: 88.9vh;
+}
+
+.login_container{
+	border-radius: 25px;
+	box-shadow: 5px 5px 5px #888888;
+	width: 500px;
+	height: 400px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 150px;
+	background-color: #e8e8e8;
+}
+
+.login_form{
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.footer{
+	width: 100%;
+	max-width: 1200px;
+	height: 50px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.login_add_edit_button{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	display: inline-block;
+	float: right;
+}
+
+.clear{
+	clear: both;
+}
