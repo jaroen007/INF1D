@@ -9,7 +9,7 @@
 ?>
 <html>
 	<head>
-		<title>Home pagina</title>
+		<title>Login pagina</title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="style/style.css" rel="stylesheet" type="text/css">
@@ -24,12 +24,15 @@
 		
 		<div class="contentcontainer">
 			<div class="content">
-				Homepage stuff
+				
 			</div>
 		</div>
 	</body>
 	
 </html>
+
+
+
 
 
 
