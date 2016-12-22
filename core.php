@@ -5,14 +5,16 @@ class Core {
 
 	//DB verbinding doormiddel van Mysqli.
 	function dbc($servername = 'localhost', $username = 'root', $password = '', $dbname = 'portfolio') {  
-		$link = mysqli_connect($servername, $username, $password, $dbname);
+		$dbc = mysqli_connect($servername, $username, $password, $dbname);
 
-		if (!$link) {
-			echo "Error: Unable to connect to MySQL." . PHP_EOL;
-			echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-			echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+		if (!$dbc) {
+			return "Error: Unable to connect to MySQL." . PHP_EOL;
+			return "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+			return "Debugging error: " . mysqli_connect_error() . PHP_EOL;
 			exit;
 		}
+		
+		return $dbc;
     } 
 	
 	function language()
