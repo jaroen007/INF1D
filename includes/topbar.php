@@ -1,5 +1,34 @@
 <div class="topbarcontainer">
 	<div class="topbar">
-		<div class="login_add_edit_button"><a href="login.php"><i class="fa fa-sign-in fa-3x" aria-hidden="true"></i></a></div>
+
+		<ul class="menu">
+			
+			<li class="item left">
+				<a href="index.php">
+				Home
+				</a>
+			</li>
+
+			<li class="item right">
+				<a href="login.php">
+				Login
+				</a>
+			</li>
+			
+			<li class="item left">
+				<a href="login.php">
+				Menu Item
+				</a>
+			</li>
+			
+			<li class="item left">
+				<a href="login.php">
+				Menu Item
+				</a>
+			</li>
+		<ul>
+		
+		<div class="clear"></div>
+		
 	</div>
 </div>
