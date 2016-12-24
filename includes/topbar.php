@@ -4,26 +4,26 @@
 		<ul class="menu">
 			
 			<li class="item left">
-				<a href="index.php">
-				Home
+				<a href="index.php?page=makePortfolio">
+				Maak een portfolio
 				</a>
 			</li>
 
 			<li class="item right">
-				<a href="login.php">
+				<a href="index.php?page=login">
 				Login
 				</a>
 			</li>
 			
 			<li class="item left">
-				<a href="login.php">
-				Menu Item
+				<a href="index.php?editPortfolio=1">
+				Bewerk je portfolio
 				</a>
 			</li>
 			
 			<li class="item left">
-				<a href="login.php">
-				Menu Item
+				<a href="index.php?page=login">
+				Login
 				</a>
 			</li>
 		<ul>
