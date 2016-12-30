@@ -251,6 +251,45 @@ li.item a:hover{
 		width: 100%;
 	}
 }
+#languages {
+    float: right;
+    width: 5px;
+    height: 5px;
+}
 
+.languagehover{
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    opacity: 1;
+}
 
+.languagehover:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.submit {
+    height: 20px;
+    width: 50px;
+    margin-left: 3px;
+    margin-top: 10px;
+    float: right;	
+}
+
+label input{
+    visibility: hidden;
+    float: right;
+}
+
+label img{
+
+    border:2px solid transparent;
+    height: 20px;
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+label input:checked + img{
+    border:2px solid black;
+}
 
