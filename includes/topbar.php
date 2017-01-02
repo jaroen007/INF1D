@@ -1,5 +1,121 @@
+<?php include 'language.php'; ?>
 <div class="topbarcontainer">
-	<div class="topbar">
-		<div class="login_add_edit_button"><a href="login.php"><i class="fa fa-sign-in fa-3x" aria-hidden="true"></i></a></div>
-	</div>
-</div>
+    <div class="topbar">
+
+        <ul class="menu">
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php'>
+				Home
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php'>				
+                                 Home
+            </a>";
+                }
+                ?>
+            </li>
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?page=makePortfolio'>
+				Maak een portfolio
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?page=makePortfolio'>				
+                                 create a portfolio
+            </a>";
+                }
+                ?>
+            </li>
+
+            <li class="item right">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?page=login'>
+				Inloggen
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?page=login'>
+				Login
+				</a>";
+                }
+                ?>
+
+            </li>
+
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?editPortfolio=1'>
+				Bewerk je portfolio
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?editPortfolio=1'>				
+                                Edit your portfolio
+				</a>";
+                }
+                ?>
+            </li>
+
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?page=login'>
+				Inloggen
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?page=login'>
+				Login
+				</a>";
+                }
+                ?>
+            </li>
+            <li>
+                <div class="automargin">
+                    <div id="languages">
+                        <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+                            <label class="languagehover">
+                                <input type="radio" name="language" value="dutch" onchange="post(this.value);" <?php
+                                if ($language == "dutch")
+                                {
+                                    echo "checked=\"checked\"";
+                                }
+                                ?> />
+                                <img src="images/dutch.png" alt="dutch" />
+                            </label>
+                            <label class="languagehover">
+                                <input type="radio" name="language" value="english" onchange="post(this.value);" <?php
+                                if ($language == "english")
+                                {
+                                    echo "checked=\"checked\"";
+                                }
+                                ?> />	
+                                <img src="images/english.png" alt="english" />
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            <ul>
+
+                <div class="clear"></div>
+
+                </div>
+                </div>
