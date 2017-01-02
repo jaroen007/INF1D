@@ -1,56 +1,106 @@
 <?php include 'language.php'; ?>
 <div class="topbarcontainer">
-	<div class="topbar">
+    <div class="topbar">
 
-		<ul class="menu">
-			
-			<li class="item left">
-                            <?php
-            if ($language == "dutch") {
-                echo "
+        <ul class="menu">
+
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
 				<a href='index.php?page=makePortfolio'>
 				Maak een portfolio
 				</a>";
-            } else {
-                echo "<a href='index.php?page=makePortfolio'>
-				Maak een portfolio
-            </a>";}
-            ?>
-			</li>
+                } else
+                {
+                    echo "<a href='index.php?page=makePortfolio'>				
+                                 create a portfolio
+            </a>";
+                }
+                ?>
+            </li>
 
-			<li class="item right">
-				<a href="index.php?page=login">
+            <li class="item right">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?page=login'>
+				Inloggen
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?page=login'>
 				Login
-				</a>
-			</li>
-			
-			<li class="item left">
-				<a href="index.php?editPortfolio=1">
+				</a>";
+                }
+                ?>
+
+            </li>
+
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?editPortfolio=1'>
 				Bewerk je portfolio
-				</a>
-			</li>
-			
-			<li class="item left">
-				<a href="index.php?page=login">
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?editPortfolio=1'>				
+                                Edit your portfolio
+				</a>";
+                }
+                ?>
+            </li>
+
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?page=login'>
+				Inloggen
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?page=login'>
 				Login
-				</a>
-			</li>
-		<ul>
-		
-		<div class="clear"></div>
+				</a>";
+                }
+                ?>
+            </li>
+            <li>
                 <div class="automargin">
-		<div id="languages">
-                <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-                    <label class="languagehover">
-                        <input type="radio" name="language" value="dutch" onchange="post(this.value);" <?php if($language == "dutch"){ echo "checked=\"checked\"";} ?> />
-                        <img src="images/dutch.png" alt="dutch" />
-                    </label>
-                    <label class="languagehover">
-                        <input type="radio" name="language" value="english" onchange="post(this.value);" <?php if($language == "english"){ echo "checked=\"checked\"";} ?> />	
-                        <img src="images/english.png" alt="english" />
-                    </label>
-                </form>
-            </div>
-	</div>
+                    <div id="languages">
+                        <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+                            <label class="languagehover">
+                                <input type="radio" name="language" value="dutch" onchange="post(this.value);" <?php
+                                if ($language == "dutch")
+                                {
+                                    echo "checked=\"checked\"";
+                                }
+                                ?> />
+                                <img src="images/dutch.png" alt="dutch" />
+                            </label>
+                            <label class="languagehover">
+                                <input type="radio" name="language" value="english" onchange="post(this.value);" <?php
+                                if ($language == "english")
+                                {
+                                    echo "checked=\"checked\"";
+                                }
+                                ?> />	
+                                <img src="images/english.png" alt="english" />
+                            </label>
+                        </form>
+                    </div>
                 </div>
-</div>
+            </li>
+            <ul>
+
+                <div class="clear"></div>
+
+                </div>
+                </div>

@@ -20,7 +20,6 @@ function variable() {
 
 variable();
 ?>
-?>
 <html>
 	<head>
 		<title>Home pagina</title>
