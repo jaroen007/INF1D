@@ -299,4 +299,8 @@ label input:checked + img{
     float: left;
     margin-top: 10px;
 }
+.test {
+    margin: 10px;
+    background-color: green;
+}
 

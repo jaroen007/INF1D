@@ -43,7 +43,7 @@
 					<p><label><b>Wachtwoord</b></label><br>
 					<input type="password" placeholder="Wachtwoord" name="wachtwoord" required></p>
 
-					<button type="submit" name="submit">Login</button>
+					<button class="test" type="submit" name="submit">Login</button>
 				</form>
 			</div>
 		</div>

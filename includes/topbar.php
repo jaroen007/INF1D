@@ -3,7 +3,22 @@
     <div class="topbar">
 
         <ul class="menu">
-
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php'>
+				Home
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php'>				
+                                 Home
+            </a>";
+                }
+                ?>
+            </li>
             <li class="item left">
                 <?php
                 if ($language == "dutch")
