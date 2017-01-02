@@ -1,13 +1,21 @@
-
+<?php include 'language.php'; ?>
 <div class="topbarcontainer">
 	<div class="topbar">
 
 		<ul class="menu">
 			
 			<li class="item left">
-				<a href="index.php?page=makePortfolio">
+                            <?php
+            if ($language == "dutch") {
+                echo "
+				<a href='index.php?page=makePortfolio'>
 				Maak een portfolio
-				</a>
+				</a>";
+            } else {
+                echo "<a href='index.php?page=makePortfolio'>
+				Maak een portfolio
+            </a>";}
+            ?>
 			</li>
 
 			<li class="item right">
@@ -30,6 +38,7 @@
 		<ul>
 		
 		<div class="clear"></div>
+                <div class="automargin">
 		<div id="languages">
                 <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
                     <label class="languagehover">
@@ -43,4 +52,5 @@
                 </form>
             </div>
 	</div>
+                </div>
 </div>

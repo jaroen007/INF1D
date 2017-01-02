@@ -10,6 +10,16 @@
     $core->updatePortfolio(1, $_POST['portfolioContent']);
 }
 	//$dbc = $core->dbc();
+function variable() {
+
+    if (isset($_POST['postlanguage'])) {
+        $language = $_POST['postlanguage'];
+        $_SESSION['language'] = $language;
+    }
+}
+
+variable();
+?>
 ?>
 <html>
 	<head>

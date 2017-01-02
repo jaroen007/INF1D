@@ -292,4 +292,11 @@ label img{
 label input:checked + img{
     border:2px solid black;
 }
+#underheadertext p{
+    font-family: "Letter Gothic Std", arial, helvetica, "sans serif";
+    font-style: italic;
+    color: white;
+    float: left;
+    margin-top: 10px;
+}
 
