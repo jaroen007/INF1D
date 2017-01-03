@@ -41,12 +41,12 @@
                 if ($language == "dutch")
                 {
                     echo "
-				<a href='index.php?page=login'>
+				<a href='index.php?page=#login' data-toggle='modal'>
 				Inloggen
 				</a>";
                 } else
                 {
-                    echo "<a href='index.php?page=login'>
+                    echo "<a href='index.php?page=#login' data-toggle='modal'>
 				Login
 				</a>";
                 }
@@ -54,6 +54,24 @@
 
             </li>
 
+			<li class="item right">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?page=#register' data-toggle='modal'>
+				Registreer
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?page=#register' data-toggle='modal'>
+				Register
+				</a>";
+                }
+                ?>
+
+            </li>
+			
             <li class="item left">
                 <?php
                 if ($language == "dutch")
@@ -70,50 +88,29 @@
                 }
                 ?>
             </li>
-
-            <li class="item left">
-                <?php
-                if ($language == "dutch")
-                {
-                    echo "
-				<a href='index.php?page=login'>
-				Inloggen
-				</a>";
-                } else
-                {
-                    echo "<a href='index.php?page=login'>
-				Login
-				</a>";
-                }
-                ?>
-            </li>
-            <li>
-                <div class="automargin">
-                    <div id="languages">
-                        <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-                            <label class="languagehover">
-                                <input type="radio" name="language" value="dutch" onchange="post(this.value);" <?php
-                                if ($language == "dutch")
-                                {
-                                    echo "checked=\"checked\"";
-                                }
-                                ?> />
-                                <img src="images/dutch.png" alt="dutch" />
-                            </label>
-                            <label class="languagehover">
-                                <input type="radio" name="language" value="english" onchange="post(this.value);" <?php
-                                if ($language == "english")
-                                {
-                                    echo "checked=\"checked\"";
-                                }
-                                ?> />	
-                                <img src="images/english.png" alt="english" />
-                            </label>
-                        </form>
-                    </div>
-                </div>
-            </li>
-            <ul>
+			<div id="languages">
+				<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+					<label class="languagehover">
+						<input type="radio" name="language" value="dutch" onchange="post(this.value);" <?php
+						if ($language == "dutch")
+						{
+							echo "checked=\"checked\"";
+						}
+						?> />
+						<img src="images/dutch.png" alt="dutch" />
+					</label>
+					<label class="languagehover">
+						<input type="radio" name="language" value="english" onchange="post(this.value);" <?php
+						if ($language == "english")
+						{
+							echo "checked=\"checked\"";
+						}
+						?> />	
+						<img src="images/english.png" alt="english" />
+					</label>
+				</form>
+			</div>
+        <ul>
 
                 <div class="clear"></div>
 

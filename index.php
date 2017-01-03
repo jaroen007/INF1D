@@ -37,6 +37,8 @@ variable();
 	</head>
 	<body >
 		<?php include 'includes/topbar.php'; ?>
+		<?php include 'includes/login.php'; ?>
+		<?php include 'includes/register.php'; ?>
 		<?php
                                 if (isset($_GET['page'])) {
                                     $core->page($_GET['page']);
