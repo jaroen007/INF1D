@@ -30,7 +30,7 @@
                 } else
                 {
                     echo "<a href='index.php?page=makePortfolio'>				
-                                 create a portfolio
+                                 Create a portfolio
             </a>";
                 }
                 ?>
