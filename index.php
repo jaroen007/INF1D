@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <?php
 	session_start();
+	session_regenerate_id();
 	
 	require ('core.php');
 	$core = new Core;
+	
 	if (isset($_POST['portfolioTags']) && isset($_POST['portfolioContent'])) {
-    $core->makePortfolio(1, $_POST['portfolioContent'], $_POST['portfolioTags']);
-}elseif (isset ($_POST['portfolioContentUpdate'])) {
-    $core->updatePortfolio(1, $_POST['portfolioContent']);
-}
-	//$dbc = $core->dbc();
+		$core->makePortfolio(1, $_POST['portfolioContent'], $_POST['portfolioTags']);
+	}elseif (isset ($_POST['portfolioContentUpdate'])) {
+		$core->updatePortfolio(1, $_POST['portfolioContent']);
+	}
+	
+	$dbc = $core->dbc();
+	
+	function variable() {
+		if (isset($_POST['postlanguage'])) {
+			$language = $_POST['postlanguage'];
+			$_SESSION['language'] = $language;
+		}
+	}
+
+	if (isset($_GET['page'])) {
+		if($_GET['page'] == 'logout'){
+			$core->page($_GET['page']);
+		}
+	}
+variable();
 ?>
 <html>
 	<head>
@@ -28,6 +45,8 @@
 	</head>
 	<body >
 		<?php include 'includes/topbar.php'; ?>
+		<?php include 'includes/login.php'; ?>
+		<?php include 'includes/register.php'; ?>
 		<?php
                                 if (isset($_GET['page'])) {
                                     $core->page($_GET['page']);

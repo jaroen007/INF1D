@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="c_3">
-                        <div class="bordered_box" >TEST</div>
+                        <div class="bordered_box" >Portfolio</div>
                     </div>
 
                     <div class="c_3">
