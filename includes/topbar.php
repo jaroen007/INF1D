@@ -35,42 +35,6 @@
                 }
                 ?>
             </li>
-
-            <li class="item right">
-                <?php
-                if ($language == "dutch")
-                {
-                    echo "
-				<a href='index.php?page=#login' data-toggle='modal'>
-				Inloggen
-				</a>";
-                } else
-                {
-                    echo "<a href='index.php?page=#login' data-toggle='modal'>
-				Login
-				</a>";
-                }
-                ?>
-
-            </li>
-
-			<li class="item right">
-                <?php
-                if ($language == "dutch")
-                {
-                    echo "
-				<a href='index.php?page=#register' data-toggle='modal'>
-				Registreer
-				</a>";
-                } else
-                {
-                    echo "<a href='index.php?page=#register' data-toggle='modal'>
-				Register
-				</a>";
-                }
-                ?>
-
-            </li>
 			
             <li class="item left">
                 <?php
@@ -88,6 +52,53 @@
                 }
                 ?>
             </li>
+			
+			<?php
+				if($_SESSION){
+				 echo '<li class="item right">';
+				 echo 'Ingelogd als: '.$_SESSION['fname'].' '.$_SESSION['lname']; //TODO: make link to profile page
+				 echo '</li>';
+				  echo '<li class="item right">';
+				 echo '<a href="index.php?page=logout">Uitloggen</a>';
+				 echo '</li>';
+				}else{
+			?>
+				<li class="item right">
+					<?php
+					if ($language == "dutch")
+					{
+						echo "
+					<a href='index.php?page=#login' data-toggle='modal'>
+					Inloggen
+					</a>";
+					} else
+					{
+						echo "<a href='index.php?page=#login' data-toggle='modal'>
+					Login
+					</a>";
+					}
+					?>
+				</li>
+
+				<li class="item right">
+					<?php
+					if ($language == "dutch")
+					{
+						echo "
+					<a href='index.php?page=#register' data-toggle='modal'>
+					Registreer
+					</a>";
+					} else
+					{
+						echo "<a href='index.php?page=#register' data-toggle='modal'>
+					Register
+					</a>";
+					}
+					?>
+				</li>
+			<?php
+				}
+			?>			
 			<div id="languages">
 				<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
 					<label class="languagehover">
