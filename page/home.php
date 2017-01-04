@@ -3,8 +3,8 @@
     <div class="content">
         <div class="c_1">
             <h1>Header1</h1>
-            <h2>Header2</h1>
-                <h3>Header3</h1>
+            <h2>Header2</h2>
+                <h3>Header3</h3>
 
                     <p>Paragraph</p>
 
