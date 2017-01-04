@@ -3,12 +3,11 @@ body,html{
     margin: 0px;
     border: 0px;
 	color: black;
-	
 	background: url(../images/achtergrond.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 /*Defaults*/
@@ -39,8 +38,8 @@ li{
 
 li::before { 
 	margin-right: 0.5%;
-  content: "●";
-  color: #9a60a5;
+ 	content: "●";
+ 	color: #9a60a5;
 }
 
 .left{
@@ -168,11 +167,10 @@ li.item a:hover{
 	padding-top: 55px;
 	width: 100%;
 	max-width: 1200px;
-        padding-left: 20px;
-        padding-bottom: 30px;
+    padding-left: 20px;
+    padding-bottom: 30px;
 	position: relative;
 	margin: 0 auto;
-	
 	background-color: #efefef;
 }
 
@@ -302,8 +300,6 @@ label input:checked + img{
     margin-top: 10px;
 }
 .test {
-
     background-color: green;
-    
 }
 
