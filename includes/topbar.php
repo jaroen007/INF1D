@@ -17,6 +17,7 @@
                                  Home
             </a>";
                 }
+                if($_SESSION){
                 ?>
             </li>
             <li class="item left">
@@ -41,20 +42,35 @@
                 if ($language == "dutch")
                 {
                     echo "
-				<a href='index.php?editPortfolio=1'>
+				<a href='index.php?page=bewerkPortfolio'>
 				Bewerk je portfolio
 				</a>";
                 } else
                 {
-                    echo "<a href='index.php?editPortfolio=1'>				
+                    echo "<a href='index.php?page=bewerkPortfolio&editPortfolio=". $_SESSION['id'] ."'>				
                                 Edit your portfolio
 				</a>";
                 }
                 ?>
             </li>
-			
+            <li class="item left">
+                <?php
+                if ($language == "dutch")
+                {
+                    echo "
+				<a href='index.php?portfolio=". $_SESSION['id'] ."'>
+				Bekijk je portfolio
+				</a>";
+                } else
+                {
+                    echo "<a href='index.php?portfolio=". $_SESSION['id'] ."'>				
+                                View your portfolio
+				</a>";
+                }
+                ?>
+            </li>
 			<?php
-				if($_SESSION){
+				
 				 echo '<li class="item right">';
 				 echo 'Ingelogd als: '.$_SESSION['fname'].' '.$_SESSION['lname']; //TODO: make link to profile page
 				 echo '</li>';

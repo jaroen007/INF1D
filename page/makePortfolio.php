@@ -3,6 +3,9 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="c_1">
                 <h1>Maak je eigen portfolio</h1>
+                <p>
+                    <input name="userID" value="<?php echo $_SESSION['id'];?>" type="hidden">
+                </p>
                 <p class="inputNaam">
                     Content toevoegen:
                 </p>
