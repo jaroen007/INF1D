@@ -1,4 +1,6 @@
 <?php
+	require ('core.php');
+	$core = new Core;
 
 // Name
 	$name = $_POST["name"];
@@ -7,7 +9,7 @@
 	$dir = "uploads/".$name."/";
 
 // Gegevens bestand
-	$targetFile = $dir . basename($_FILES["fileToUpload"]["name"]);
+	$targetFile = $dir . $core->Sanitize(basename($_FILES["fileToUpload"]["name"]));
 	$fileType = $_FILES["fileToUpload"]["type"];
 	$fileSize = $_FILES["fileToUpload"]["size"];
 	$tmpName = $_FILES["fileToUpload"]["tmp_name"];
