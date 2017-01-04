@@ -1,14 +1,4 @@
 <?php
-// Clean input of any harmful stuff
-	function Sanitize($input){
-		require("inc/conn.php");
-		
-		$input 		= stripslashes($input);
-		$input		= mysqli_real_escape_string($conn, $input);
-		$input		= htmlentities($input);
-		
-		return $input;
-	}
 
 // Name
 	$name = "Jeroen";
