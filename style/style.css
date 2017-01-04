@@ -122,6 +122,7 @@ li.item a:hover{
 .contentcontainer{
 	display: block;
 	width: 100%;
+
 }
 
 .footercontainer{
@@ -167,7 +168,8 @@ li.item a:hover{
 	padding-top: 55px;
 	width: 100%;
 	max-width: 1200px;
-
+        padding-left: 20px;
+        padding-bottom: 30px;
 	position: relative;
 	margin: 0 auto;
 	
@@ -300,7 +302,8 @@ label input:checked + img{
     margin-top: 10px;
 }
 .test {
-    margin: 10px;
+
     background-color: green;
+    
 }
 
