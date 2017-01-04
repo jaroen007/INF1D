@@ -51,10 +51,12 @@ variable();
                                 if (isset($_GET['page'])) {
                                     $core->page($_GET['page']);
                                 } elseif (isset($_GET['portfolio'])) {
-                                    $core->getPortfolio($_GET['portfolio']);
-                                }elseif (isset($_GET['editPortfolio'])) {
+                                    $core->getPortfolioContent($_GET['portfolio']);
+                                }
+                                elseif (isset($_GET['editPortfolio'])) {
                                     $core->getPortfolio($_GET['editPortfolio']);
-                                } else {
+                                } 
+                                else {
                                     include 'page/home.php';
                                 }
                                 ?>
