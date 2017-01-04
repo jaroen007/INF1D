@@ -29,7 +29,7 @@ class Core {
         return $language;
     }	
 	
-	//Deze functie is om de juiste pagina weer te geven uit de database
+	//Deze functie is om de juiste pagina weer te geven uit de bestanden
     function page($page) {
         if (!file_exists('page/' . $page . '.php')) {
             include 'page/home.php';
@@ -39,9 +39,9 @@ class Core {
     }
 	
     //hiervandaan wordt het portfolio weergegeven
-    function getPortfolio($id) {
+    function getPortfolioContent($id) {
         $dbc = $this->dbc();
-        $sql = 'SELECT `Content` FROM `content` WHERE ContentID=' . $id;
+        $sql = 'SELECT `Content` FROM `content` WHERE UserID=' . $id;
         echo $sql;
         if (mysqli_query($dbc, $sql)) {
             $result = mysqli_query($dbc, $sql);
@@ -53,7 +53,44 @@ class Core {
             include 'page/home.php';
         }
     }
-    
+    function getPortfolio($id) {
+        $dbc = $this->dbc();
+        $sql = 'SELECT * FROM `content` WHERE UserID=' . $id;
+        if (mysqli_query($dbc, $sql)) {
+            $result = mysqli_query($dbc, $sql);
+            while ($row = mysqli_fetch_assoc($result)){
+                $contentID = $row['ContentID'];
+                $content = $row['Content'];
+                $tags = $row['Tags'];
+                echo '<div class="c_1">
+                <h1>Bewerk je eigen portfolio</h1>
+                <p>
+                    <input name="userID" value="' . $_SESSION['id'] . '" type="hidden">
+                    <input name="contentID" value="' . $contentID . '" type="hidden">
+                </p>
+                <p class="inputNaam">
+                    Content toevoegen:
+                </p>
+                <p>
+                    <textarea class="invoerveldGroot" name="portfolioContent">' . $content . '</textarea>
+
+                </p>
+
+                <p class="inputNaam">
+                    Tags:
+                </p>
+                <p>
+                    <input class="invoerveld" type="text" name="portfolioTags" value="' . $tags . '">
+                </p>
+                <p>
+                    <input class="invoerveld" type="submit" value="opslaan">
+                </p>
+            </div>';
+            }
+        } else {
+            include 'page/home.php';
+        }
+    }
     //Hier wordt het portfolio aangemaakt uit het formulier
     function makePortfolio($userID, $content, $tags) {
         $dbc = $this->dbc();
@@ -62,7 +99,6 @@ class Core {
         
         mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangemaakt");
     }
-	
     //Hier wordt het portfolio geupdate
     function editPortfolio($userID, $content, $tags, $ContentID){
         $dbc = $this->dbc();

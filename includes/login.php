@@ -20,6 +20,7 @@
 					$_SESSION['fname'] = $row['FirstName'];
 					$_SESSION['lname'] = $row['LastName'];
 					$_SESSION['access'] = $row['AccessLevel'];
+					$_SESSION['id'] = $row['UserID'];
 					header("Location: index.php");	//TODO: make current page session to always stay on the same page when logging in. (bonus)
 				}else{
 					echo "Username or password is incorrect.";
