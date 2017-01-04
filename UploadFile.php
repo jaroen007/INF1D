@@ -1,7 +1,7 @@
 <?php
 
 // Name
-	$name = $_POST["name"];
+	$name = "Jeroen";
 	
 // Folder voor uploads
 	$dir = "uploads/".$name."/";
