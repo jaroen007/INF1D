@@ -15,8 +15,8 @@
 	$dbc = $core->dbc();
 	
 	function variable() {
-		if (isset($_POST['postlanguage'])) {
-			$language = $_POST['postlanguage'];
+		if (isset($_GET['language'])) {
+			$language = $_GET['language'];
 			$_SESSION['language'] = $language;
 		}
 	}

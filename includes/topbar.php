@@ -116,39 +116,17 @@
 				}
 			?>			
 			<div id="languages">
-				<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-					<label class="languagehover">
-						<input type="radio" name="language" value="dutch" onchange="post(this.value);" <?php
-						if ($language == "dutch")
-						{
-							echo "checked=\"checked\"";
-						}
-						?> />
-                                                <?php
-                                                if ($language == "english")
-                                                {
-						echo '<img src="images/dutch.png" alt="dutch" />';
-                                                }
-                                                ?>
-					</label>
+				<label class="languagehover">
+                                    <?php
+                                    if ($language == "dutch"){
+                                        echo '<a href="?language=english"><img src="images/english.png" alt="english"/></a>';
+                                    } else {
+                                        echo '<a href="?language=dutch"><img src="images/dutch.png" alt="dutch"/></a>';
+                                    }	
+                                    ?>
+                                </label>
                         </div>
-                                <div id="languages">
-					<label class="languagehover">
-						<input type="radio" name="language" value="english" onchange="post(this.value);" <?php
-						if ($language == "english")
-						{
-							echo "checked=\"checked\"";
-						}
-						?> />
-                                                <?php
-                                                if ($language == "dutch")
-                                                {
-						echo '<img src="images/english.png" alt="english" />';
-                                                }
-                                                ?>
-					</label>
-				</form>
-			</div>
+                                
         <ul>
 
                 <div class="clear"></div>

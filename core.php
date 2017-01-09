@@ -16,18 +16,7 @@ class Core {
 		
 		return $dbc;
     } 
-	
-	function language()
-    {
-        if (!isset($_SESSION['language']))
-        {
-            $language = "dutch";
-        } else
-        {
-            $language = $_SESSION['language'];
-        }
-        return $language;
-    }	
+		
 	
 	//Deze functie is om de juiste pagina weer te geven uit de bestanden
     function page($page) {
