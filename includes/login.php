@@ -44,7 +44,7 @@
 		  </div>
 		  <div class="modal-body">
 			  <p>Vul a.u.b uw email adres en wachtwoord in om in te loggen.
-			  <br>Nog geen account? klik hier.</p><br>
+			  <br>Nog geen account? klik <a href='index.php?page=#register' data-dismiss="modal" data-toggle='modal'>hier</a>.</p><br>
 			  <div class="form-group">
 				<label class="control-label col-sm-2" for="email">Email:</label>
 				<div class="col-sm-10">
