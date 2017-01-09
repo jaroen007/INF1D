@@ -124,16 +124,28 @@
 							echo "checked=\"checked\"";
 						}
 						?> />
-						<img src="images/dutch.png" alt="dutch" />
+                                                <?php
+                                                if ($language == "english")
+                                                {
+						echo '<img src="images/dutch.png" alt="dutch" />';
+                                                }
+                                                ?>
 					</label>
+                        </div>
+                                <div id="languages">
 					<label class="languagehover">
 						<input type="radio" name="language" value="english" onchange="post(this.value);" <?php
 						if ($language == "english")
 						{
 							echo "checked=\"checked\"";
 						}
-						?> />	
-						<img src="images/english.png" alt="english" />
+						?> />
+                                                <?php
+                                                if ($language == "dutch")
+                                                {
+						echo '<img src="images/english.png" alt="english" />';
+                                                }
+                                                ?>
 					</label>
 				</form>
 			</div>
