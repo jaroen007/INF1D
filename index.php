@@ -48,18 +48,18 @@ variable();
 		<?php include 'includes/login.php'; ?>
 		<?php include 'includes/register.php'; ?>
 		<?php
-                                if (isset($_GET['page'])) {
-                                    $core->page($_GET['page']);
-                                } elseif (isset($_GET['portfolio'])) {
-                                    $core->getPortfolioContent($_GET['portfolio']);
-                                }
-                                elseif (isset($_GET['editPortfolio'])) {
-                                    $core->getPortfolio($_GET['editPortfolio']);
-                                } 
-                                else {
-                                    include 'page/home.php';
-                                }
-                                ?>
+		if (isset($_GET['page'])) {
+			$core->page($_GET['page']);
+		} elseif (isset($_GET['portfolio'])) {
+			$core->getPortfolioContent($_GET['portfolio']);
+		}
+		elseif (isset($_GET['editPortfolio'])) {
+			$core->getPortfolio($_GET['editPortfolio']);
+		} 
+		else {
+			include 'page/home.php';
+		}
+		?>
 			<div class="clear"></div>
 		</div>
 <script src="includes/tinyMCE/tinymce.min.js"></script>
