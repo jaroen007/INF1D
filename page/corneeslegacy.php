@@ -3,7 +3,7 @@
 	session_start();
 	session_regenerate_id();
 	
-	require ('core.php');
+	require ('../core.php');
 	$core = new Core;
 	
 	if (isset($_POST['portfolioTags']) && isset($_POST['portfolioContent'])) {
@@ -40,13 +40,12 @@ variable();
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://use.fontawesome.com/76b1763dbb.js"></script>
 		
-		<link href="style/style.css" rel="stylesheet" type="text/css">
+		<link href="../style/style.css" rel="stylesheet" type="text/css">
 		
 	</head>
 	<body >
-		<?php include 'includes/topbar.php'; ?>
-		<?php include 'includes/login.php'; ?>
-		<?php include 'includes/register.php'; ?>
+		<?php include '../includes/topbar.php'; ?>
+		<?php ?>
 		<?php
                                 if (isset($_GET['page'])) {
                                     $core->page($_GET['page']);
@@ -57,7 +56,7 @@ variable();
                                     $core->getPortfolio($_GET['editPortfolio']);
                                 } 
                                 else {
-                                    include 'page/home.php';
+                                    include '../page/home.php';
                                 }
                                 ?>
 			<div class="clear"></div>
