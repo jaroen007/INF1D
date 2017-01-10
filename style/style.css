@@ -102,6 +102,13 @@ li.item a:hover{
 	}
 }
 
+.alert{
+    z-index: 5;
+    left: 25%;
+    margin-top: 65px;
+    position: absolute;
+    width: 50%;
+}
 
 .bordered_box{
     width: 80%;
