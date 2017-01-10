@@ -12,7 +12,9 @@ body,html{
 
 /*Defaults*/
 h1{
-    color: #423d6f;
+    color: #4a3e6c;
+    font-size: 50px;
+    
 }
 
 h2{
@@ -218,7 +220,7 @@ li.item a:hover{
 }
 #logo{
         float:right;
-        margin: 20px;
+        margin-right: 55px;
 }
 .c_2{
 	width: 48%;

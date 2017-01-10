@@ -2,15 +2,15 @@
 <div class="contentcontainer">
     <div class="content">
         <div class="c_1">
-            <h1>Header1</h1>
-            <h2>Header2</h2>
-            <h3>Header3</h3>
-            <p>Paragraph</p>
+            <h1>Portfolio's</h1>
+            <h2>Stenden Hogeschool - Informatica</h2>
+            <h3>Welkom op het digitale portfolio systeem van Stenden.</h3>
+<!--            <p>Paragraph</p>
             <ul>
                 <li>Coffee</li>
                 <li>Tea</li>
                 <li>Milk</li>
-            </ul>
+            </ul>-->
             <div id="logo">
                 <img src="images/madebystudents.png" alt="logo">
             </div>
