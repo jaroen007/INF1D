@@ -64,6 +64,7 @@ variable();
 		</div>
 <script src="includes/tinyMCE/tinymce.min.js"></script>
 	</body>
+	
 </html>
 
 
