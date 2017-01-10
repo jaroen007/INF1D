@@ -72,7 +72,7 @@
 			<?php
 				
 				 echo '<li class="item right">';
-				 echo 'Ingelogd als: '.$_SESSION['fname'].' '.$_SESSION['lname']; //TODO: make link to profile page
+				 echo 'Ingelogd als: <a href="profiel.php">'.$_SESSION['fname'].' '.$_SESSION['lname'].'</a>'; //TODO: make link to profile page
 				 echo '</li>';
 				  echo '<li class="item right">';
 				 echo '<a href="index.php?page=logout">Uitloggen</a>';

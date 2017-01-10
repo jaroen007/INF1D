@@ -27,7 +27,6 @@ $dbc = $core->dbc();
             <div class="content">
                 <div class="tabel">
                     <?php
-                    echo $_SESSION['password'];
                     $sql = "SELECT * FROM user WHERE UserID = " . $_SESSION['id'] . "";
 
                     $result = mysqli_query($dbc, $sql);
@@ -50,7 +49,6 @@ $dbc = $core->dbc();
                         . "<td>" . $row['Adres'] . "</td>"
                         . "<td>" . $row['Password'] . "</td>"
                         . "</tr>";
-                        echo $row['UserID'];
                     }
                     echo "</table>";
                     echo "<form method='post' action='profieledit.php'>";

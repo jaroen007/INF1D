@@ -24,7 +24,6 @@ $dbc = $core->dbc();
             <div class="content">
                 <?php
                 include ('includes/topbar.php');
-                echo $_SESSION['id'];
                 $sql = "SELECT * FROM user WHERE UserID = " . $_SESSION['id'] . "";
                 $result = mysqli_query($dbc, $sql);
                 while ($Row = mysqli_fetch_assoc($result))
