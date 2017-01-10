@@ -211,12 +211,15 @@ li.item a:hover{
 
 .c_1{
 	width: 98%;
-    margin: 1%;
+        margin: 1%;
 	min-height: 1px;
 	float: left;
 	position: relative;
 }
-
+#logo{
+        float:right;
+        margin: 20px;
+}
 .c_2{
 	width: 48%;
 	margin: 1%;
