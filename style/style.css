@@ -3,7 +3,7 @@ body,html{
     margin: 0px;
     border: 0px;
 	color: black;
-	background: url(../images/achtergrond.png) no-repeat center center fixed; 
+	background: url(../images/achtergrond4.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -113,7 +113,7 @@ li.item a:hover{
 .bordered_box{
     width: 80%;
     margin: 0 auto;
-    border: 8px solid #b0c5e1;
+    border: 8px solid #4a3e6c;
     box-shadow: 5px 5px 5px 1px #8A8A8A;
     text-align: center;
     background-color: white;
@@ -147,7 +147,7 @@ li.item a:hover{
 	left:0;
 	right:0;
 	z-index: 2;
-	background-color: #b0c5e1;
+	background-color: #4a3e6c;
 }
 
 @media only screen and (max-width: 700px) {
