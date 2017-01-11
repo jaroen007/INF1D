@@ -73,6 +73,7 @@ variable();
                                     include 'page/home.php';
                                 }
                                 ?>
+
 			<div class="clear"></div>
 		</div>
 <script src="includes/tinyMCE/tinymce.min.js"></script>

@@ -40,6 +40,14 @@
                     }
                     ?>
                 </li>
+				<li class="item left">
+					<?php
+					if ($_SESSION['access'] == "Docent")
+					{
+						echo "<a href='beoordelenportfolio.php'>Beoordelen Portfolio</a>";
+					}
+					?>
+				</li>
                     <?php
                     echo '<li class="item right">';
                     echo 'Ingelogd als: <a href="profiel.php">' . $_SESSION['fname'] . ' ' . $_SESSION['lname'] . '</a>'; //TODO: make link to profile page
