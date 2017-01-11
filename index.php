@@ -6,15 +6,31 @@
 	require ('core.php');
 	$core = new Core;
 	
-	if (isset($_POST['overMij']) && isset($_POST['experience'])&& isset($_POST['education'])&& isset($_POST['interesses'])&&isset($_POST['overige'])&& isset($_POST['contact'])) {
+	if (isset($_GET['page'])) {
+		if($_GET['page'] == 'logout'){
+			$core->page($_GET['page']);
+		}
+	}
+        if (isset($_POST['overMij'])) {
 		$core->makePortfolio($_SESSION['id'], $_POST['overMij'], 'Over Mij');
+        }
+        if(isset($_POST['experience'])){
                 $core->makePortfolio($_SESSION['id'], $_POST['experience'], 'Ervaring');
+        }
+        if(isset($_POST['education'])){
                 $core->makePortfolio($_SESSION['id'], $_POST['education'], 'Opleidingen');
+        }if(isset($_POST['interesses'])){
                 $core->makePortfolio($_SESSION['id'], $_POST['interesses'], 'Interesses');
+        }
+        if(isset($_POST['overige'])){
                 $core->makePortfolio($_SESSION['id'], $_POST['overige'], 'Overige');
+        }
+        if(isset($_POST['contact'])){
                 $core->makePortfolio($_SESSION['id'], $_POST['contact'], 'Contact');
-	}elseif (isset ($_POST['portfolioContentUpdate'])) {
-		$core->updatePortfolio($_SESSION['id'], $_POST['portfolioContent']);
+        }
+	if (isset ($_POST['portfolioContent']) && isset ($_GET['tag']) && isset ($_GET['updatePortfolio'])) {
+		$core->editPortfolio($_SESSION['id'], $_POST['portfolioContent'], $_GET['tag']);
+                header('Location: index.php?portfolio=' . $_SESSION['id'] . '&tag=' . $_GET['tag']);
 	}
 	
 	$dbc = $core->dbc();

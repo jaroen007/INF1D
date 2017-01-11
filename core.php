@@ -56,7 +56,7 @@ class Core {
             include 'page/home.php';
         }
     }
-
+//het bewerk formulier van het portfolio
     function getPortfolio($id,$tag) {
         $dbc = $this->dbc();
         $sql = 'SELECT * FROM `content` WHERE UserID=' . $_SESSION['id'] . " AND Tags='" . $tag  ."'";
@@ -65,7 +65,9 @@ class Core {
             while ($row = mysqli_fetch_assoc($result)) {
                 $contentID = $row['ContentID'];
                 $content = $row['Content'];
-                echo '<div class="content">
+                echo '<form action="';
+                echo htmlspecialchars($_SERVER["PHP_SELF"]) .  '?updatePortfolio=' . $_SESSION['id'] . '&tag=' . $tag . '" method="post">
+                    <div class="content">
                 <h1>Bewerk je eigen portfolio</h1>
                 <p>
                     <input name="userID" value="' . $_SESSION['id'] . '" type="hidden">
@@ -80,7 +82,8 @@ class Core {
                 <p>
                     <input class="invoerveld" type="submit" value="opslaan">
                 </p>
-            </div>';
+            </div>
+            </form>';
             }
         } else {
             include 'page/home.php';
@@ -91,15 +94,15 @@ class Core {
     function makePortfolio($userID, $content, $tags) {
         $dbc = $this->dbc();
         $currentDate = date("Y-m-d");
-        $sql = "INSERT INTO `content` (`UserID`, `Content`, `Tags`, `Date`) VALUES ('" . 1 . "', '" . mysqli_real_escape_string($dbc, $content) . "', '" . $tags . "', '" . $currentDate . "');";
+        $sql = "INSERT INTO `content` (`UserID`, `Content`, `Tags`, `Date`) VALUES ('" . $userID . "', '" . mysqli_real_escape_string($dbc, $content) . "', '" . $tags . "', '" . $currentDate . "');";
         mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangemaakt");
     }
 
     //Hier wordt het portfolio geupdate
-    function editPortfolio($userID, $content, $tags, $ContentID) {
+    function editPortfolio($userID, $content, $tags) {
         $dbc = $this->dbc();
-        $sql = "UPDATE `content` SET `Content` = '" . $content . "', Tags='" . $tags . "' WHERE `content`.`ContentID` = " . $ContentID . ";";
-        mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangemaakt");
+        $sql = 'UPDATE content SET Content = "' . $content .'"  WHERE UserID = ' . $userID . ' AND Tags="' . $tags .  '";';
+        mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangepast");
     }
 	
 	// Input velden opruimen van code en andere html tekens
