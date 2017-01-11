@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `PhoneNumber` varchar(15) NOT NULL,
   `Adres` varchar(30) NOT NULL,
   `Password` varchar(60) NOT NULL,
-  `AccessLevel` enum('Leerling','Docent','Admin') NOT NULL,
+  `AccessLevel` enum('Leerling','Docent','Admin', 'SLB') NOT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
