@@ -41,7 +41,8 @@ class Core {
                     . '<li class="item left"> <a href="?portfolio='.$id.'&tag=' . "Interesses" . '">Interesses</a></li>'
                     . '<li class="item left"> <a href="?portfolio='.$id.'&tag=' . "Overige" . '">Overige</a></li>'
                     . '<li class="item left"> <a href="?portfolio='.$id.'&tag=' . "Contact" . '">Contact</a></li>'
-                    . '</ul><div class="content">';
+                    . '</ul><div class="contentcontainer">
+    <div class="content">';
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<h2>' . $row['Tags'];
                 if(isset($_SESSION['id']) && $_SESSION['id'] == $id){
@@ -51,7 +52,7 @@ class Core {
                 }
                 echo $row['Content'];
             }
-            echo '</div>';
+            echo '</div></div>';
         } else {
             include 'page/home.php';
         }
@@ -101,7 +102,7 @@ class Core {
     //Hier wordt het portfolio geupdate
     function editPortfolio($userID, $content, $tags) {
         $dbc = $this->dbc();
-        $sql = 'UPDATE content SET Content = "' . $content .'"  WHERE UserID = ' . $userID . ' AND Tags="' . $tags .  '";';
+        $sql = 'UPDATE content SET Content = "' . mysqli_real_escape_string($content) .'"  WHERE UserID = ' . $userID . ' AND Tags="' . $tags .  '";';
         mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangepast");
     }
 	
