@@ -14,7 +14,7 @@
                 if (mysqli_num_rows($QueryResult) >= 0) {
                     echo "<p>Portfolio Lijst!</p>";
                     echo "<p>In dit tabel staan alle portfolio's. U kunt de portfolio's goedkeuren door het boxje aan te vinken.</p>";
-                    echo "<table width='100%' border='1'>";
+                    echo "<table class=table-bordered width='100%'>";
                     echo "<tr><th>Name</th><th>Date </th><th>Goedgekeurd</th><th>Waarmerk</th><th>Link</th>";
 
                     while ($Row = mysqli_fetch_assoc($QueryResult)) {
@@ -39,7 +39,7 @@
                             $Box = "";
                         }
 
-                        echo "<td><form method=POST action=#><input type=hidden name=id value=" . $Row['ContentID'] . "><input type=checkbox name=check " . $Box . "><input type=submit name=submit value=Update!></form></td>";
+                        echo "<td><form method=POST action=#><input type=hidden name=id value=" . $Row['ContentID'] . "><input type=checkbox name=check " . $Box . " class=custom-control-input><input class=btn btn-primary type=submit name=submit value=Update!></form></td>";
 
                         if ($Row['waarmerk'] == 1) {
                             $waarmerkTekst = 'Dit portfolio is goedgekeurd &#10004;';
@@ -47,7 +47,7 @@
                             $waarmerkTekst = 'Dit portfolio is (nog) niet goedgekeurd &#10006;';
                         }
                         echo "<td>" . $waarmerkTekst . "</td>";
-                        echo "<td><a href=></a>Klik</td><tr>";
+                        echo "<td><a class=btn btn-primary href=# role=button>Klik!</a></td><tr>";
                     }
                 }
                 mysqli_free_result($QueryResult);
