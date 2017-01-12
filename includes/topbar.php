@@ -14,19 +14,24 @@
                 </li>
                 <li class="item left">
                     <?php
-                    if ($language == "dutch") {
-                        echo "<a href='index.php?page=makePortfolio'>Maak een portfolio</a>";
+                    $bestaan = $core->portfolioBestaat();
+                    if ($bestaan) {
+                        ?>
+                    </li>
+                    <li class="item left">
+                        <?php
+                        if ($language == "dutch") {
+                            echo "
+				<a href='index.php?portfolio=" . $_SESSION['id'] . "'>Bekijk je portfolio</a>";
+                        } else {
+                            echo "<a href='index.php?portfolio=" . $_SESSION['id'] . "'>View your portfolio</a>";
+                        }
                     } else {
-                        echo "<a href='index.php?page=makePortfolio'>Create a portfolio</a>";
-                    }
-                    ?>
-                </li>
-                <li class="item left">
-                    <?php
-                    if ($language == "dutch") {
-                        echo "<a href='index.php?page=bewerkPortfolio'>Bewerk je portfolio</a>";
-                    } else {
-                        echo "<a href='index.php?page=bewerkPortfolio&editPortfolio=" . $_SESSION['id'] . "'>Edit your portfolio</a>";
+                        if ($language == "dutch") {
+                            echo "<a href='index.php?page=makePortfolio'>Maak een portfolio</a>";
+                        } else {
+                            echo "<a href='index.php?page=makePortfolio'>Create a portfolio</a>";
+                        }
                     }
                     ?>
                 </li>
