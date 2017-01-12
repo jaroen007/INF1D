@@ -38,7 +38,7 @@
 | -------------------------------------------------------------------*/
 
 	
-	$config['img_path'] = '/school/stenden/sites/ddp/port_images'; // Relative to domain name
+	$config['img_path'] = '/port_images'; // Relative to domain name
 	$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this]
 
 
