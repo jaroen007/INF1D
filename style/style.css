@@ -1,9 +1,9 @@
-body,html{
+﻿body,html{
     padding: 0px;
     margin: 0px;
     border: 0px;
 	color: black;
-	background: url(../images/achtergrond4.jpg) no-repeat center center fixed; 
+	background: url(../images/achtergrond4.png) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
