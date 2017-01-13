@@ -1,9 +1,9 @@
-body,html{
+﻿body,html{
     padding: 0px;
     margin: 0px;
     border: 0px;
 	color: black;
-	background: url(../images/achtergrond.png) no-repeat center center fixed; 
+	background: url(../images/achtergrond4.png) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -12,7 +12,9 @@ body,html{
 
 /*Defaults*/
 h1{
-    color: #423d6f;
+    color: #4a3e6c;
+    font-size: 50px;
+    
 }
 
 h2{
@@ -85,7 +87,7 @@ li.item a{
     color: #ffffff;
     text-decoration: none;
     height: 50px;
-    display: block;
+    display: inline-block;
 	padding: 0 12px;
 	text-align: center;
 }
@@ -102,11 +104,26 @@ li.item a:hover{
 	}
 }
 
+.alert{
+    z-index: 5;
+    left: 25%;
+    margin-top: 65px;
+    position: absolute;
+    width: 50%;
+}
+
+.alert-admin{
+    z-index: 5;
+    left: 25%;
+    margin-top: 0px;
+    position: relative;
+    width: 50%;
+}
 
 .bordered_box{
     width: 80%;
     margin: 0 auto;
-    border: 8px solid #b0c5e1;
+    border: 8px solid #4a3e6c;
     box-shadow: 5px 5px 5px 1px #8A8A8A;
     text-align: center;
     background-color: white;
@@ -140,7 +157,7 @@ li.item a:hover{
 	left:0;
 	right:0;
 	z-index: 2;
-	background-color: #b0c5e1;
+	background-color: #4a3e6c;
 }
 
 @media only screen and (max-width: 700px) {
@@ -164,7 +181,7 @@ li.item a:hover{
 }
 
 .content{
-	padding-top: 55px;
+	padding-top: 20px;
 	width: 100%;
 	max-width: 1200px;
     padding-left: 20px;
@@ -204,12 +221,15 @@ li.item a:hover{
 
 .c_1{
 	width: 98%;
-    margin: 1%;
+        margin: 1%;
 	min-height: 1px;
 	float: left;
 	position: relative;
 }
-
+#logo{
+        float:right;
+        margin-right: 55px;
+}
 .c_2{
 	width: 48%;
 	margin: 1%;

@@ -6,10 +6,31 @@
 	require ('core.php');
 	$core = new Core;
 	
-	if (isset($_POST['portfolioTags']) && isset($_POST['portfolioContent'])) {
-		$core->makePortfolio(1, $_POST['portfolioContent'], $_POST['portfolioTags']);
-	}elseif (isset ($_POST['portfolioContentUpdate'])) {
-		$core->updatePortfolio(1, $_POST['portfolioContent']);
+	if (isset($_GET['page'])) {
+		if($_GET['page'] == 'logout'){
+			$core->page($_GET['page']);
+		}
+	}
+        if (isset($_POST['overMij'])) {
+		$core->makePortfolio($_SESSION['id'], $_POST['overMij'], 'Over Mij');
+        }
+        if(isset($_POST['experience'])){
+                $core->makePortfolio($_SESSION['id'], $_POST['experience'], 'Ervaring');
+        }
+        if(isset($_POST['education'])){
+                $core->makePortfolio($_SESSION['id'], $_POST['education'], 'Opleidingen');
+        }if(isset($_POST['interesses'])){
+                $core->makePortfolio($_SESSION['id'], $_POST['interesses'], 'Interesses');
+        }
+        if(isset($_POST['overige'])){
+                $core->makePortfolio($_SESSION['id'], $_POST['overige'], 'Overige');
+        }
+        if(isset($_POST['contact'])){
+                $core->makePortfolio($_SESSION['id'], $_POST['contact'], 'Contact');
+        }
+	if (isset ($_POST['portfolioContent']) && isset ($_GET['tag']) && isset ($_GET['updatePortfolio'])) {
+		$core->editPortfolio($_SESSION['id'], $_POST['portfolioContent'], $_GET['tag']);
+                header('Location: index.php?portfolio=' . $_SESSION['id'] . '&tag=' . $_GET['tag']);
 	}
 	
 	$dbc = $core->dbc();
@@ -51,15 +72,24 @@ variable();
                                 if (isset($_GET['page'])) {
                                     $core->page($_GET['page']);
                                 } elseif (isset($_GET['portfolio'])) {
-                                    $core->getPortfolioContent($_GET['portfolio']);
+                                    if(isset($_GET['tag'])){
+                                        $core->getPortfolioContent($_GET['portfolio'], $_GET['tag']);
+                                    }else{
+                                    $core->getPortfolioContent($_GET['portfolio'], 'Over mij');
+                                    }
                                 }
                                 elseif (isset($_GET['editPortfolio'])) {
-                                    $core->getPortfolio($_GET['editPortfolio']);
+                                        if(isset($_GET['editPortfolio'])&&isset($_GET['tag'])){
+                                    $core->getPortfolio($_GET['editPortfolio'], $_GET['tag']);
+                                        }else{
+                                           $core->getPortfolio($_GET['editPortfolio'], 'Over mij'); 
+                                        }
                                 } 
                                 else {
                                     include 'page/home.php';
                                 }
                                 ?>
+
 			<div class="clear"></div>
 		</div>
 <script src="includes/tinyMCE/tinymce.min.js"></script>

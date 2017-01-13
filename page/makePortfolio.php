@@ -7,18 +7,43 @@
                     <input name="userID" value="<?php echo $_SESSION['id'];?>" type="hidden">
                 </p>
                 <p class="inputNaam">
-                    Content toevoegen:
+                    Over mij:
                 </p>
                 <p>
-                    <textarea class="invoerveldGroot" name="portfolioContent"></textarea>
+                    <textarea class="invoerveldGroot" name="overMij"></textarea>
 
                 </p>
-
                 <p class="inputNaam">
-                    Tags:
+                    Ervaring:
                 </p>
                 <p>
-                    <input class="invoerveld" type="text" name="portfolioTags">
+                    <textarea class="invoerveldGroot" name="experience"></textarea>
+
+                </p>
+                <p class="inputNaam">
+                    Opleidingen:
+                </p>
+                <p>
+                    <textarea class="invoerveldGroot" name="education"></textarea>
+
+                </p>
+                <p class="inputNaam">
+                    Interesses:
+                </p>
+                <p>
+                    <textarea class="invoerveldGroot" name="interesses"></textarea>
+                </p>
+                <p class="inputNaam">
+                    Overige:
+                </p>
+                <p>
+                    <textarea class="invoerveldGroot" name="overige"></textarea>
+                </p>
+                <p class="inputNaam">
+                    Contact:
+                </p>
+                <p>
+                    <textarea class="invoerveldGroot" name="contact"></textarea>
                 </p>
                 <p>
                     <input class="invoerveld" type="submit" value="opslaan">

@@ -1,6 +1,9 @@
 <?php
 	if((isset($_POST['submit_register'])) && (empty($_POST['voornaam']) || empty($_POST['achternaam']) || empty($_POST['email']) || empty($_POST['telefoon']) || empty($_POST['adres']) || empty($_POST['wachtwoord']))){
-		echo 'Vul a.u.b alle veldin in.';
+		echo '<div class="alert alert-danger alert-dismissable ">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  Vul a.u.b alle velden in.
+			</div>';
 	}else{
 		if(isset($_POST['submit_register'])){	
 			$fname = htmlentities($_POST['voornaam']);
@@ -16,7 +19,10 @@
 					VALUES ('', '".$fname."', '".$lname."', '".$email."', '".$phone."', '".$adres."', '".$pass."', '1')";
 
 			if (!mysqli_query($dbc, $sql)) {
-				echo "Error: " . $sql . "<br>" . mysqli_error($dbc);
+				echo '<div class="alert alert-danger alert-dismissable ">
+				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  Er is iets mis gegaan tijdens het registreren. Probeer het a.u.b opnieuw.
+				</div>';
 			}
 			
 			mysqli_close($dbc);

@@ -1,6 +1,9 @@
 <?php
 	if((isset($_POST['submit_login'])) && (empty($_POST['email']) || empty($_POST['wachtwoord']))){
-		echo 'Please fill in all the fields.';
+		echo '<div class="alert alert-danger alert-dismissable ">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  Vul a.u.b alle velden in.
+			</div>';
 	}else{	
 		if(isset($_POST['submit_login'])){
 			$email = htmlentities($_POST['email']);
@@ -13,7 +16,10 @@
 			
 			//TODO: bad messages. modal closes instantly. doesnt matter for good login.
 			if (mysqli_num_rows($result) == 0){
-				echo "Username or password is incorrect.";
+				echo '<div class="alert alert-danger alert-dismissable ">
+					  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					  Email adres of wachtwoord is incorrect.
+					</div>';
 			}else{
 				if(password_verify($password, $row['Password'])){
 					$_SESSION['loggedIn'] = 1;
@@ -23,7 +29,10 @@
 					$_SESSION['id'] = $row['UserID'];
 					header("Location: index.php");	//TODO: make current page session to always stay on the same page when logging in. (bonus)
 				}else{
-					echo "Username or password is incorrect.";
+					echo '<div class="alert alert-danger alert-dismissable ">
+						  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						  Email adres of wachtwoord is incorrect.
+						</div>';
 				}
 			}
 

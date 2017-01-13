@@ -28,71 +28,99 @@ class Core {
     }
 	
     //hiervandaan wordt het portfolio weergegeven
-    function getPortfolioContent($id) {
+    function getPortfolioContent($id, $tag) {
         $dbc = $this->dbc();
-        $sql = 'SELECT `Content` FROM `content` WHERE UserID=' . $id;
-        echo $sql;
+        $sql = "SELECT `Content`, `Tags` FROM `content` WHERE Tags='" . $tag . "' AND UserID=" . $id . ";";
         if (mysqli_query($dbc, $sql)) {
             $result = mysqli_query($dbc, $sql);
+            echo '<p>&nbsp;&nbsp;</p>'
+            . '<ul class="topbar portfolio" style="background-color: #90aed5;margin-top:30px">'
+            . '<li class="item left"> <a href="?portfolio=' . $id . '">Over mij</a></li>'
+            . '<li class="item left"> <a href="?portfolio=' . $id . '&tag=' . "Ervaring" . '">Ervaring</a></li>'
+            . '<li class="item left"> <a href="?portfolio=' . $id . '&tag=' . "Opleidingen" . '">Opleidingen</a></li>'
+            . '<li class="item left"> <a href="?portfolio=' . $id . '&tag=' . "Interesses" . '">Interesses</a></li>'
+            . '<li class="item left"> <a href="?portfolio=' . $id . '&tag=' . "Overige" . '">Overige</a></li>'
+            . '<li class="item left"> <a href="?portfolio=' . $id . '&tag=' . "Contact" . '">Contact</a></li>'
+            . '</ul><div class="contentcontainer">
+    <div class="content">';
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<p>&nbsp;</p>';
+                echo '<h2>' . $row['Tags'];
+                if (isset($_SESSION['id']) && $_SESSION['id'] == $id) {
+                    echo ' <a href="?editPortfolio=' . $id . '&tag=' . $row['Tags'] . '"><i class="fa fa-pencil" aria-hidden="true"></i></a></h2>';
+                } else {
+                    echo '</h2>';
+                }
                 echo $row['Content'];
             }
+            echo '</div></div>';
         } else {
             include 'page/home.php';
         }
     }
-    function getPortfolio($id) {
+
+//het bewerk formulier van het portfolio
+    function getPortfolio($id, $tag) {
         $dbc = $this->dbc();
-        $sql = 'SELECT * FROM `content` WHERE UserID=' . $id;
+        $sql = 'SELECT * FROM `content` WHERE UserID=' . $_SESSION['id'] . " AND Tags='" . $tag . "'";
         if (mysqli_query($dbc, $sql)) {
             $result = mysqli_query($dbc, $sql);
-            while ($row = mysqli_fetch_assoc($result)){
+            while ($row = mysqli_fetch_assoc($result)) {
                 $contentID = $row['ContentID'];
                 $content = $row['Content'];
-                $tags = $row['Tags'];
-                echo '<div class="c_1">
+                echo '<p>&nbsp;&nbsp;</p><div class="contentcontainer">
+                         <div class="content">'
+                . '<form action="';
+                echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?updatePortfolio=' . $_SESSION['id'] . '&tag=' . $tag . '" method="post">
+                    
+                             <div class="c_1">
                 <h1>Bewerk je eigen portfolio</h1>
                 <p>
                     <input name="userID" value="' . $_SESSION['id'] . '" type="hidden">
                     <input name="contentID" value="' . $contentID . '" type="hidden">
                 </p>
                 <p class="inputNaam">
-                    Content toevoegen:
+                    ' . $tag . ':
                 </p>
                 <p>
                     <textarea class="invoerveldGroot" name="portfolioContent">' . $content . '</textarea>
-
-                </p>
-
-                <p class="inputNaam">
-                    Tags:
-                </p>
-                <p>
-                    <input class="invoerveld" type="text" name="portfolioTags" value="' . $tags . '">
                 </p>
                 <p>
                     <input class="invoerveld" type="submit" value="opslaan">
                 </p>
-            </div>';
+            </div>
+            </form>
+            ';
             }
         } else {
             include 'page/home.php';
         }
     }
+
     //Hier wordt het portfolio aangemaakt uit het formulier
     function makePortfolio($userID, $content, $tags) {
         $dbc = $this->dbc();
         $currentDate = date("Y-m-d");
-        $sql = "INSERT INTO `content` (`ContentID`, `UserID`, `Content`, `Tags`, `Date`) VALUES (NULL, '" . 1 . "', '" . mysqli_real_escape_string($dbc, $content) . "', '" . $tags . "', '" . $currentDate . "');";
-        
+        $sql = "INSERT INTO `content` (`UserID`, `Content`, `Tags`, `Date`) VALUES ('" . $userID . "', '" . mysqli_real_escape_string($dbc, $content) . "', '" . $tags . "', '" . $currentDate . "');";
         mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangemaakt");
     }
+
     //Hier wordt het portfolio geupdate
-    function editPortfolio($userID, $content, $tags, $ContentID){
+    function editPortfolio($userID, $content, $tags) {
         $dbc = $this->dbc();
-        $sql= "UPDATE `content` SET `Content` = '" . $content . "', Tags='" . $tags . "' WHERE `content`.`ContentID` = " . $ContentID .";";
-         mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangemaakt");
+        $sql = 'UPDATE content SET Content = "' . mysqli_real_escape_string($dbc, $content) . '"  WHERE UserID = ' . $userID . ' AND Tags="' . $tags . '";';
+        mysqli_query($dbc, $sql) or die("De pagina kan niet worden aangepast");
+    }
+
+    //check of het portfolio bestaat
+    function portfolioBestaat() {
+        $dbc = $this->dbc();
+        $sql = "SELECT * FROM `content` WHERE UserID=" . $_SESSION['id'];
+        $result = mysqli_query($dbc, $sql) or die("Het portfolio kan niet gevonden worden");
+        if ($result->num_rows == 0) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 	
 	// Input velden opruimen van code en andere html tekens
