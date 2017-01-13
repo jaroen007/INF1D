@@ -112,6 +112,14 @@ li.item a:hover{
     width: 50%;
 }
 
+.alert-admin{
+    z-index: 5;
+    left: 25%;
+    margin-top: 0px;
+    position: relative;
+    width: 50%;
+}
+
 .bordered_box{
     width: 80%;
     margin: 0 auto;

@@ -7,12 +7,14 @@
         //
         if (isset($_SESSION['access'])) {
             if ($_SESSION['access'] == "Admin" || $_SESSION['access'] == "SLB") {
+				$dbc = mysqli_connect("localhost", "root", "");
+                mysqli_select_db($dbc, 'portfolio');
                 $SQLstring = "SELECT Name, cv.UserID, Date, waarmerk, ContentID FROM cv, content WHERE cv.UserID = content.UserID";
                 $QueryResult = mysqli_query($dbc, $SQLstring);
-                if (mysqli_num_rows($QueryResult) >= 0) {
+                if (mysqli_num_rows($QueryResult) > 0) {
                     echo "<p>Portfolio Lijst!</p>";
                     echo "<p>In dit tabel staan alle portfolio's. U kunt de portfolio's goedkeuren door het boxje aan te vinken.</p>";
-                    echo "<table class=table-bordered width='100%'>";
+                    echo "<table class='table-bordered table' width='100%'>";
                     echo "<tr><th>Name</th><th>Date </th><th>Goedgekeurd</th><th>Waarmerk</th><th>Link</th>";
 
                     while ($Row = mysqli_fetch_assoc($QueryResult)) {
@@ -45,7 +47,7 @@
                             $waarmerkTekst = 'Dit portfolio is (nog) niet goedgekeurd &#10006;';
                         }
                         echo "<td>" . $waarmerkTekst . "</td>";
-                        echo "<td><a class=btn btn-primary href=# role=button>Klik!</a></td><tr>";
+                        echo "<td><a class=btn btn-primary href=index.php?portfolio=".$Row['UserID']." role=button>Klik!</a></td><tr>";
                     }
                 }
                 mysqli_free_result($QueryResult);
