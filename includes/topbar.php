@@ -35,16 +35,6 @@
                     }
                     ?>
                 </li>
-                <li class="item left">
-                    <?php
-                    if ($language == "dutch") {
-                        echo "
-				<a href='index.php?portfolio=" . $_SESSION['id'] . "'>Bekijk je portfolio</a>";
-                    } else {
-                        echo "<a href='index.php?portfolio=" . $_SESSION['id'] . "'>View your portfolio</a>";
-                    }
-                    ?>
-                </li>
 				<li class="item left">
 					<?php
 					if ($_SESSION['access'] == "Docent")
