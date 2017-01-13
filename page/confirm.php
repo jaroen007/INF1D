@@ -7,10 +7,8 @@
         //
         if (isset($_SESSION['access'])) {
             if ($_SESSION['access'] == "Admin" || $_SESSION['access'] == "SLB") {
-                $DBConnect = mysqli_connect("localhost", "root", "");
-                mysqli_select_db($DBConnect, 'portfolio');
                 $SQLstring = "SELECT Name, cv.UserID, Date, waarmerk, ContentID FROM cv, content WHERE cv.UserID = content.UserID";
-                $QueryResult = mysqli_query($DBConnect, $SQLstring);
+                $QueryResult = mysqli_query($dbc, $SQLstring);
                 if (mysqli_num_rows($QueryResult) >= 0) {
                     echo "<p>Portfolio Lijst!</p>";
                     echo "<p>In dit tabel staan alle portfolio's. U kunt de portfolio's goedkeuren door het boxje aan te vinken.</p>";
@@ -24,12 +22,12 @@
                         if (isset($_POST['submit'])) {
                             if (isset($_POST['check'])) {
                                 $sql = "UPDATE content SET waarmerk = '1' WHERE ContentID = " . $_POST['id'] . "";
-                                $result = mysqli_query($DBConnect, $sql);
+                                $result = mysqli_query($dbc, $sql);
                                 $Checkbox = "1";
                                 echo "<meta http-equiv='refresh' content='0'>";
                             } else {
                                 $sql = "UPDATE content SET waarmerk = '0' WHERE ContentID = " . $_POST['id'] . "";
-                                $result = mysqli_query($DBConnect, $sql);
+                                $result = mysqli_query($dbc, $sql);
                                 echo "<meta http-equiv='refresh' content='0'>";
                             }
                         }
@@ -51,7 +49,7 @@
                     }
                 }
                 mysqli_free_result($QueryResult);
-                mysqli_close($DBConnect);
+                mysqli_close($dbc);
             } else {
                 echo '<div class="alert alert-admin alert-danger alert-dismissable ">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
