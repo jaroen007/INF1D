@@ -47,7 +47,7 @@
 				</a>";
                 } else
                 {
-                    echo "<a href='index.php?page=bewerkPortfolio&editPortfolio=". $_SESSION['id'] ."'>				
+                    echo "<a href='index.php?page=bewerkPortfolio&editPortfolio=". @$_SESSION['id'] ."'>				
                                 Edit your portfolio
 				</a>";
                 }
@@ -58,27 +58,41 @@
                 if ($language == "dutch")
                 {
                     echo "
-				<a href='index.php?portfolio=". $_SESSION['id'] ."'>
+				<a href='index.php?portfolio=". @$_SESSION['id'] ."'>
 				Bekijk je portfolio
 				</a>";
                 } else
                 {
-                    echo "<a href='index.php?portfolio=". $_SESSION['id'] ."'>				
+                    echo "<a href='index.php?portfolio=". @$_SESSION['id'] ."'>				
                                 View your portfolio
 				</a>";
                 }
                 ?>
             </li>
-			<?php
+			
+                            
 				
-				 echo '<li class="item right">';
-				 echo 'Ingelogd als: '.$_SESSION['fname'].' '.$_SESSION['lname']; //TODO: make link to profile page
-				 echo '</li>';
-				  echo '<li class="item right">';
+				 <li class="item right">
+                                  <?php
+                if ($language == "dutch")
+                {   
+				 echo 'Ingelogd als: '.@$_SESSION['fname'].' '.@$_SESSION['lname']; //TODO: make link to profile page
+				 } else
+                {
+                    echo 'Logged in as: '.@$_SESSION['fname'].' '.@$_SESSION['lname']; //TODO: make link to profile page				
+                ?>
+                                 </li>
+				 <li class="item right">
+                                      <?php
+                if ($language == "dutch")
+                { 
 				 echo '<a href="index.php?page=logout">Uitloggen</a>';
-				 echo '</li>';
-				}else{
-			?>
+				 } else
+                {
+                    echo '<a href="index.php?page=logout">Logout</a>';				
+                ?>
+                                </li>
+			
 				<li class="item right">
 					<?php
 					if ($language == "dutch")
@@ -127,7 +141,7 @@
                                 </label>
                         </div>
                                 
-        <ul>
+        </ul>
 
                 <div class="clear"></div>
 
